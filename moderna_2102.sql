@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2022 at 07:53 AM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.7
+-- Generation Time: Jan 25, 2022 at 08:03 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -69,6 +68,31 @@ INSERT INTO `services` (`id`, `title`, `description`, `icon_class`, `box_class_n
 (1, 'Lorem Ipsum', 'Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident', 'bxl-dribbble', '0', 1),
 (2, 'Sed ut perspiciatis', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur', 'bx-file', '0', 1);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `why_us`
+--
+
+CREATE TABLE `why_us` (
+  `id` int(11) NOT NULL,
+  `photo` varchar(100) DEFAULT 'photo.jpg',
+  `video_url` varchar(200) DEFAULT NULL,
+  `title_one` varchar(50) NOT NULL DEFAULT 'LOREM IPSUM',
+  `description_one` text DEFAULT NULL,
+  `icon_one` varchar(50) DEFAULT NULL,
+  `title_two` varchar(50) DEFAULT NULL,
+  `description_two` text DEFAULT NULL,
+  `icon_two` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `why_us`
+--
+
+INSERT INTO `why_us` (`id`, `photo`, `video_url`, `title_one`, `description_one`, `icon_one`, `title_two`, `description_two`, `icon_two`) VALUES
+(1, 'photo.jpg', NULL, 'LOREM IPSUM', NULL, NULL, NULL, NULL, NULL);
+
 --
 -- Indexes for dumped tables
 --
@@ -86,6 +110,12 @@ ALTER TABLE `services`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `why_us`
+--
+ALTER TABLE `why_us`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -100,6 +130,12 @@ ALTER TABLE `banners`
 --
 ALTER TABLE `services`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `why_us`
+--
+ALTER TABLE `why_us`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

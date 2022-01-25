@@ -85,9 +85,9 @@ function siteUrl()
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="<?= siteUrl() ?>/admin/why_us/edit.php">
                 <span data-feather="shopping-cart"></span>
-                Services
+                Why Us
               </a>
             </li>
 
