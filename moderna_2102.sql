@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2022 at 08:03 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.26
+-- Generation Time: Jan 27, 2022 at 07:10 AM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -34,7 +35,7 @@ CREATE TABLE `banners` (
   `btn_text` varchar(30) NOT NULL,
   `btn_url` varchar(100) NOT NULL,
   `photo` varchar(100) NOT NULL,
-  `status` int(1) NOT NULL DEFAULT 1
+  `status` int(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -57,7 +58,7 @@ CREATE TABLE `services` (
   `description` text NOT NULL,
   `icon_class` varchar(20) NOT NULL,
   `box_class_name` varchar(20) NOT NULL,
-  `status` int(1) NOT NULL DEFAULT 1
+  `status` int(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -66,7 +67,8 @@ CREATE TABLE `services` (
 
 INSERT INTO `services` (`id`, `title`, `description`, `icon_class`, `box_class_name`, `status`) VALUES
 (1, 'Lorem Ipsum', 'Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident', 'bxl-dribbble', '0', 1),
-(2, 'Sed ut perspiciatis', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur', 'bx-file', '0', 1);
+(2, 'Sed ut perspiciatis', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur', 'bx-file', '0', 1),
+(3, 'Sed ut perspiciatis', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur', 'bxl-dribbble', 'icon-box-green', 1);
 
 -- --------------------------------------------------------
 
@@ -79,10 +81,10 @@ CREATE TABLE `why_us` (
   `photo` varchar(100) DEFAULT 'photo.jpg',
   `video_url` varchar(200) DEFAULT NULL,
   `title_one` varchar(50) NOT NULL DEFAULT 'LOREM IPSUM',
-  `description_one` text DEFAULT NULL,
+  `description_one` text,
   `icon_one` varchar(50) DEFAULT NULL,
   `title_two` varchar(50) DEFAULT NULL,
-  `description_two` text DEFAULT NULL,
+  `description_two` text,
   `icon_two` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -91,7 +93,7 @@ CREATE TABLE `why_us` (
 --
 
 INSERT INTO `why_us` (`id`, `photo`, `video_url`, `title_one`, `description_one`, `icon_one`, `title_two`, `description_two`, `icon_two`) VALUES
-(1, 'photo.jpg', NULL, 'LOREM IPSUM', NULL, NULL, NULL, NULL, NULL);
+(1, 'why-us.jpg', 'https://www.youtube.com/watch?v=OK_JCtrrv-c', 'LOREM IPSUM', 'Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident', 'bx-fingerprint', 'NEMO ENIM', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque', 'bx-gift');
 
 --
 -- Indexes for dumped tables
@@ -129,7 +131,7 @@ ALTER TABLE `banners`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `why_us`

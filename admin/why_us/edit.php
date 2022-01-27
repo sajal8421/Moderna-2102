@@ -28,9 +28,7 @@ if (mysqli_num_rows($result) > 0) {
                 <input type="text" placeholder="Title One" value="<?=$data['title_one']?>" name="title_one" class="form-control">
               </div>
               <div class="form-group">
-                <textarea name="description_one" placeholder="Description One" class="form-control">
-                <?=$data['description_one']?>
-                </textarea>
+                <textarea name="description_one" placeholder="Description One" class="form-control"><?=$data['description_one']?></textarea>
               </div>
               <div class="form-group">
                 <input type="text" name="icon_one" value="<?=$data['icon_one']?>" placeholder="Icon one" class="form-control">
@@ -39,9 +37,7 @@ if (mysqli_num_rows($result) > 0) {
                 <input type="text" value="<?=$data['title_two']?>" placeholder="Title Two" name="title_two" class="form-control">
               </div>
               <div class="form-group">
-                <textarea name="description_Two"  placeholder="Description Two" class="form-control">
-                <?=$data['description_two']?>
-                </textarea>
+                <textarea name="description_two"  placeholder="Description Two" class="form-control"><?=$data['description_two']?></textarea>
               </div>
               <div class="form-group">
                 <input type="text" name="icon_two" value="<?=$data['icon_two']?>" placeholder="Icon Two" class="form-control">
@@ -53,7 +49,7 @@ if (mysqli_num_rows($result) > 0) {
               <div class="form-group">
                 <label for="">Banner Image: </label>
                 <input type="file" name="banner_img" class="form-control">
-                <img src="<?=$data['photo']?>">
+                <img src="../../uploads/why-us/<?=$data['photo']?>" width="150">
               </div>
               <div class="form-group">
                 <input type="submit" name="submit" value="Update" class="form-control">
